@@ -1,5 +1,5 @@
 {
-    "name": "Source Freedom",
+    "name": "𝖥𝗅𝗈𝖱𝖾𝖷",
     "description": "لتشغيل الاغاني في المجموعات والقنوات.",
     "logo": "https://te.legra.ph/file/402c519808f75bd9b1803.jpg",
     "keywords": [
@@ -7,7 +7,7 @@
         "MusicPlayer",
         "VideoPlayer"
     ],
-    "repository": "https://github.com/SoRsRR8r9/strong",
+    "repository": "https://github.com/ssstss/strong",
     "env": {
         "SESSION": {
             "description": "اكتب هنا كود ترمكس",
