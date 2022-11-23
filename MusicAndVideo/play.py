@@ -17,17 +17,17 @@ from config import HNDLR, bot, call_py
 from MusicAndVideo.helpers.queues import QUEUE, add_to_queue, get_queue
 
 AMBILFOTO = [
-    "https://te.legra.ph/file/402c519808f75bd9b1803.jpg",
-    "https://te.legra.ph/file/90e3b3aeb77e3e598d66d.jpg",
-    "https://te.legra.ph/file/2a726c634dbc3b9e8f451.jpg",
-    "https://te.legra.ph/file/466de30ee0f9383c8e09e.jpg",
-    "https://te.legra.ph/file/430dcf25456f2bb38109f.jpg",
-    "https://te.legra.ph/file/c74686f70a1b918060b8e.jpg",
-    "https://te.legra.ph/file/a282c460a7f98aedbe956.jpg",
-    "https://te.legra.ph/file/478f9fa85efb2740f2544.jpg",
-    "https://te.legra.ph/file/cd5c96a3c7e8ae1913ef3.jpg",
-    "https://te.legra.ph/file/1cc6513411578cafda022.jpg",
-    "https://te.legra.ph/file/46fa55b49b85c084159ce.jpg",
+    "https://te.legra.ph/file/139a6cc3973254695cd1d.jpg",
+    "https://te.legra.ph/file/288eda0c40482253f9b3d.jpg",
+    "https://te.legra.ph/file/76f79e6ea4afffd2ff15b.jpg",
+    "https://te.legra.ph/file/9090aa00bfafdcfe75304.jpg",
+    "https://te.legra.ph/file/c52b132b4b3c16101a01e.jpg",
+    "https://te.legra.ph/file/52c14e05abf74cefeb76a.jpg",
+    "https://te.legra.ph/file/7c607be42e251646b451a.jpg",
+    "https://te.legra.ph/file/a0219ff00427c8b7b5c00.jpg",
+    "https://te.legra.ph/file/b327d9fb2fb3df4d00231.jpg",
+    "https://te.legra.ph/file/bb13ab47a8a7ede38a366.jpg",
+    "https://te.legra.ph/file/76f79e6ea4afffd2ff15b.jpg",
 ]
 
 IMAGE_THUMBNAIL = random.choice(AMBILFOTO)
@@ -102,7 +102,7 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.command(["ش"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["شغل"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -110,7 +110,7 @@ async def play(client, m: Message):
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
-            huehue = await replied.reply("**اެبشࢪ ثواެني بس اެبحث 🌵.**")
+            huehue = await replied.reply("**اެبشࢪ ثواެني بس اެبحث .**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -125,7 +125,7 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://te.legra.ph/file/402c519808f75bd9b1803.jpg",
+                    photo="https://te.legra.ph/file/b327d9fb2fb3df4d00231.jpg",
                     caption=f"""
 -› اެبشࢪ ضفتهاެ ݪلانتضاࢪ {pos}
 -› اެݪاެسم: [{songname}]({link})
@@ -145,7 +145,7 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://te.legra.ph/file/90e3b3aeb77e3e598d66d.jpg",
+                    photo="https://te.legra.ph/file/bb13ab47a8a7ede38a366.jpg",
                     caption=f"""
 -› اެݪحِاެݪةِ : تَمِ اެݪتَشِغِيَݪ بَنِجَاެحِ
 -› اެݪاެسم: [{songname}]({link})
@@ -156,10 +156,10 @@ async def play(client, m: Message):
 
     else:
         if len(m.command) < 2:
-            await m.reply("-› يرجى اعطاء اسم الاغنية او راجع زر الاوامر لمعرفة استخدامي 🌵.")
+            await m.reply("-› يرجى اعطاء اسم الاغنية او راجع زر الاوامر لمعرفة استخدامي .")
         else:
             await m.delete()
-            huehue = await m.reply("اެبشࢪ ثواެني بس اެبحث 🌵.")
+            huehue = await m.reply("اެبشࢪ ثواެني بس اެبحث .")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -217,7 +217,7 @@ async def vplay(client, m: Message):
     if replied:
         if replied.video or replied.document:
             await m.delete()
-            huehue = await replied.reply("**اެبشࢪ ثواެني بس اެبحث 🌵.**")
+            huehue = await replied.reply("**اެبشࢪ ثواެني بس اެبحث .**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -242,7 +242,7 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://te.legra.ph/file/2a726c634dbc3b9e8f451.jpg",
+                    photo="https://te.legra.ph/file/76f79e6ea4afffd2ff15b.jpg",
                     caption=f"""
 **-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ{pos}
 -› اެݪاެسم: [{songname}]({link})
@@ -266,7 +266,7 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://te.legra.ph/file/466de30ee0f9383c8e09e.jpg",
+                    photo="https://te.legra.ph/file/c52b132b4b3c16101a01e.jpg",
                     caption=f"""
 **-› اެݪحِاެݪةِ : تَمِ اެݪتَشِغِيَݪ بَنِجَاެحِ
 -› اެݪاެسم: [{songname}]({link})
@@ -278,11 +278,11 @@ async def vplay(client, m: Message):
     else:
         if len(m.command) < 2:
             await m.reply(
-                "**-› يرجى اعطاء اسم فيديو او راجع زر الاوامر لمعرفة استخدامي 🌵.**"
+                "**-› يرجى اعطاء اسم فيديو او راجع زر الاوامر لمعرفة استخدامي .**"
             )
         else:
             await m.delete()
-            huehue = await m.reply("**اެبشࢪ ثواެني بس اެبحث 🌵.")
+            huehue = await m.reply("**اެبشࢪ ثواެني بس اެبحث .")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
@@ -371,7 +371,7 @@ async def playfrom(client, m: Message):
                     add_to_queue(chat_id, songname, location, link, "اެݪصۅت", 0)
                     # await m.reply_to_message.delete()
                     await m.reply_photo(
-                        photo="https://te.legra.ph/file/430dcf25456f2bb38109f.jpg",
+                        photo="https://te.legra.ph/file/52c14e05abf74cefeb76a.jpg",
                         caption=f"""
 **-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ {chat}
 -› اެݪاެسم: [{songname}]({link})
@@ -408,4 +408,4 @@ async def playlist(client, m: Message):
                 QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
             await m.reply(QUE, disable_web_page_preview=True)
     else:
-        await m.reply("**معݪش ، ماެفي شي مشتغݪ ياެعيني🌵.**")
+        await m.reply("**معݪش ، ماެفي شي مشتغݪ ياެعيني.**")
