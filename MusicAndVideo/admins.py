@@ -15,9 +15,9 @@ async def skip(client, m: Message):
     if len(m.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await m.reply("**معݪش ، ماެفي شي مشتغݪ ياެعيني 🌵.**")
+            await m.reply("**معݪش ، ماެفي شي مشتغݪ ياެعيني .**")
         elif op == 1:
-            await m.reply("معݪش ، ماެفي شي في اެݪاެنتضاެࢪ طݪعت من اެݪمكاެݪمةه ❤️‍🔥**")
+            await m.reply("معݪش ، ماެفي شي في اެݪاެنتضاެࢪ طݪعت من اެݪمكاެݪمةه **")
         else:
             await m.reply(
                 f"**-›  اެبشࢪ عيني تم اެݪتخطي** \n**-›  اެݪحين ࢪاެح اެغني** - [{op[0]}]({op[1]}) | `{op[2]}`",
@@ -50,11 +50,11 @@ async def stop(client, m: Message):
         try:
             await call_py.leave_group_call(chat_id)
             clear_queue(chat_id)
-            await m.reply("**اެهݪين عيني اެبشࢪ ۅقفت اެݪاެغنيةه اެݪحين 🌵.**")
+            await m.reply("**اެهݪين عيني اެبشࢪ ۅقفت اެݪاެغنيةه اެݪحين .**")
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
     else:
-        await m.reply("**معݪش ، ماެفي شي مشتغݪ ياެعيني 🌵.**")
+        await m.reply("**معݪش ، ماެفي شي مشتغݪ ياެعيني .**")
 
 
 @Client.on_message(filters.command(["بلش"], prefixes=f"{HNDLR}"))
@@ -71,7 +71,7 @@ async def pause(client, m: Message):
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
     else:
-        await m.reply("**  معݪش ، ماެفي شي مشتغݪ ياެعيني 🌵.**")
+        await m.reply("**  معݪش ، ماެفي شي مشتغݪ ياެعيني .**")
 
 
 @Client.on_message(filters.command(["وكف"], prefixes=f"{HNDLR}"))
@@ -88,4 +88,4 @@ async def resume(client, m: Message):
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
     else:
-        await m.reply("**معݪش ، ماެفي شي مشتغݪ ياެعيني 🌵.**")
+        await m.reply("**معݪش ، ماެفي شي مشتغݪ ياެعيني .**")
